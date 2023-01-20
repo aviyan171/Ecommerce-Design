@@ -5,11 +5,7 @@ interface IChildren {
 }
 
 const Layout = ({ children }: IChildren) => {
-  return (
-    <Box sx={{ backgroundColor: ({ palette }) => palette.primary.light }}>
-      {children}
-    </Box>
-  );
+  return <Box sx={{ bgcolor: "#F7F8FA" }}>{children}</Box>;
 };
 
 export default Layout;

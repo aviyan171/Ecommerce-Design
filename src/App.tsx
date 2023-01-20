@@ -1,17 +1,14 @@
-import CategoryBar from "./common/CategoryBar";
-import Navbar from "./common/Navbar";
-import ProductDetails from "./pages/ProductDetails";
-// import Layout from "./Layout/Layout";
-// import ProductList from "./pages/ProductList";
+import { Box } from "@mui/material";
+import Navbarrr from "./common/Navbarrr";
+import Layout from "./Layout/Layout";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <CategoryBar />
-      {/* <ProductList /> */}
-      <ProductDetails />
-    </div>
+    <Layout>
+      <Navbarrr />
+      <RegisterPage />
+    </Layout>
   );
 }
 

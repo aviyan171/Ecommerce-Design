@@ -84,6 +84,7 @@ const ProductDetails = () => {
               >
                 Canvas shoes for girls
               </Typography>
+
               <Box sx={{ display: "flex" }}>
                 {new Array(5).fill("").map((_, index) => {
                   return (
@@ -114,6 +115,7 @@ const ProductDetails = () => {
                   color: "#3f51b5",
                   fontWeight: "bold",
                 }}
+                
               >
                 $250.00
               </Typography>
@@ -273,6 +275,7 @@ const ProductDetails = () => {
           </Box>
         </Box>
         <Divider />
+
         <Box sx={{ height: 500, width: "maxWidth", mt: 2 }}>
           <Typography
             sx={{ fontFamily: "Shalimar", fontWeight: "bold", fontSize: 30 }}

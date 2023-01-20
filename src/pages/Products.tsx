@@ -1,6 +1,16 @@
-import { Box, Card, CardMedia, CardContent, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  Tooltip,
+} from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 
 import { MobileLists, prodLists } from "./arrayProdList";
 
@@ -20,6 +30,7 @@ const Products = () => {
               width: 180,
               height: 265,
               "&:hover": { boxShadow: "8px 10px 8px lightgrey" },
+              position: "relative",
             }}
           >
             <Box>
@@ -28,27 +39,32 @@ const Products = () => {
                 image={item.image}
                 title="shoes"
               />
+              <div
+                // ref={favoriteElement}
+                // onClick={handleChangeColor}
+
+                className="white-icon"
+              >
+                <Tooltip title="Add to favorites" placement="top">
+                  <FavoriteIcon
+                    sx={{
+                      position: "absolute",
+                      right: "0",
+                      top: "0",
+                      color: "red",
+                    }}
+                    // onClick={handleAddToFavorite}
+                  />
+                </Tooltip>
+              </div>
               <CardContent>
                 <Typography sx={{ fontWeight: "bold", fontSize: 14 }}>
                   {item.desc}
                 </Typography>
                 <Typography sx={{ fontSize: 13 }}>Rs.{item.price}</Typography>
-                <Box sx={{ display: "flex" }}>
-                  {new Array(5).fill("").map((_, index) => {
-                    return (
-                      <Box key={index}>
-                        <StarIcon
-                          sx={{
-                            color: ({ palette: { warning } }) => warning.main,
-                            fontSize: 13,
-                          }}
-                        />
-                      </Box>
-                    );
-                  })}
-                  <Typography sx={{ fontSize: 10, mt: 0.4 }}>
-                    ({item.totalRating})
-                  </Typography>
+                <Box sx={{ display: "flex", gap: 2 }}>
+                  <DeleteIcon sx={{ fontSize: 14 }} />
+                  <EditIcon sx={{ fontSize: 14 }} />
                 </Box>
               </CardContent>
             </Box>
