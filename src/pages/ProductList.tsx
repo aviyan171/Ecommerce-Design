@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Banner from "../assets/PNG/Banner.png";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 
@@ -9,27 +9,35 @@ import Footer from "./Footer";
 const ProductList = () => {
   return (
     <Box>
-      <Container sx={{ mt: 2, position: "relative" }}>
+      <Box sx={{ ml: 8, mr: 8, mt: 3, position: "relative" }}>
         <Box
           component="img"
           src={Banner}
           alt="Banner"
           sx={{ maxWidth: "100%" }}
         />
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: "flex", mt: 2, mb: 2 }}>
           <Typography
             sx={{
-              fontFamily: "Shalimar",
-              fontWeight: "bold",
-              fontSize: 30,
+              fontWeight: 600,
+              fontSize: 20,
               color: "black",
+              ml: 1.5,
             }}
           >
             Trending Now
           </Typography>
-          <Box sx={{ position: "absolute", right: 0, display: "flex", mb: 2 }}>
-            <Typography>View All</Typography>
-            <ArrowForwardIosSharpIcon sx={{ fontSize: "22.5px" }} />
+          <Box
+            sx={{
+              position: "absolute",
+              right: 0,
+              display: "flex",
+              mb: 2,
+              mr: 4,
+            }}
+          >
+            <Typography sx={{ fontSize: 14 }}>View All</Typography>
+            <ArrowForwardIosSharpIcon sx={{ fontSize: 13, mt: 0.5 }} />
           </Box>
         </Box>
         <Products />
@@ -37,9 +45,8 @@ const ProductList = () => {
         <Box sx={{ display: "flex", mt: 5, mb: 2 }}>
           <Typography
             sx={{
-              fontFamily: "Shalimar",
-              fontWeight: "bold",
-              fontSize: 30,
+              fontWeight: 600,
+              fontSize: 24,
               color: "black",
             }}
           >
@@ -47,7 +54,7 @@ const ProductList = () => {
           </Typography>
         </Box>
         <Cards />
-      </Container>
+      </Box>
       <Footer />
     </Box>
   );

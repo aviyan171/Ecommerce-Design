@@ -55,7 +55,7 @@ const Footer = () => {
             </Box>
           </Box>
         </Container>
-        <Typography mt={7.5} textAlign="center">
+        <Typography mt={5} textAlign="center">
           2022 All rights reserved. NovelMart Ltd.
         </Typography>
       </Box>

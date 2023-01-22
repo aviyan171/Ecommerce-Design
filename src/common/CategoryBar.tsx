@@ -15,21 +15,23 @@ const CategoryBar = () => {
     <Box>
       <Box
         sx={{
-          bgcolor: "#bbdefb",
-          height: 48,
+          bgcolor: "#ECF1FF",
+          height: 50,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          mt: 10,
         }}
       >
-        <Container sx={{ display: "flex", gap: 3 }}>
+        <Box sx={{ display: "flex", gap: 4, ml: 8, mr: 8 }}>
           {categoryLists.map((item, index) => {
             return (
               <Box key={index}>
                 <Typography
+                  color="primary"
                   sx={{
-                    color: ({ palette: { primary } }) => primary.main,
-                    fontSize: 14,
+                    fontSize: 13,
+                    fontWeight: 400,
                   }}
                 >
                   {item}
@@ -37,7 +39,7 @@ const CategoryBar = () => {
               </Box>
             );
           })}
-        </Container>
+        </Box>
       </Box>
     </Box>
   );

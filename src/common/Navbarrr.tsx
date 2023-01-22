@@ -17,7 +17,7 @@ const Navbarrr = () => {
       <AppBar
         sx={{
           bgcolor: "#F8F9FA",
-          height: "90px",
+          height: 85,
           display: "flex",
           justifyContent: "center",
         }}

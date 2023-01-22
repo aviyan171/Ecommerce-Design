@@ -9,8 +9,6 @@ import {
 import StarIcon from "@mui/icons-material/Star";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 
 import { MobileLists, prodLists } from "./arrayProdList";
 
@@ -27,24 +25,28 @@ const Products = () => {
         return (
           <Card
             sx={{
-              width: 180,
-              height: 265,
+              width: 185,
+              height: 270,
               "&:hover": { boxShadow: "8px 10px 8px lightgrey" },
               position: "relative",
             }}
           >
             <Box>
-              <CardMedia
-                sx={{ height: 180, width: 180 }}
-                image={item.image}
-                title="shoes"
-              />
-              <div
-                // ref={favoriteElement}
-                // onClick={handleChangeColor}
-
-                className="white-icon"
+              <Box
+                sx={{ height: 180, width: 180, overflow: "hidden", mx: "auto" }}
               >
+                <CardMedia
+                  image={item.image}
+                  sx={{
+                    cursor: "pointer",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                  title="shoes"
+                />
+              </Box>
+              <div className="white-icon">
                 <Tooltip title="Add to favorites" placement="top">
                   <FavoriteIcon
                     sx={{
@@ -53,18 +55,38 @@ const Products = () => {
                       top: "0",
                       color: "red",
                     }}
-                    // onClick={handleAddToFavorite}
                   />
                 </Tooltip>
               </div>
               <CardContent>
-                <Typography sx={{ fontWeight: "bold", fontSize: 14 }}>
+                <Typography
+                  sx={{
+                    fontWeight: 600,
+                    fontSize: 13,
+                    lineHeight: "24px",
+                  }}
+                >
                   {item.desc}
                 </Typography>
-                <Typography sx={{ fontSize: 13 }}>Rs.{item.price}</Typography>
-                <Box sx={{ display: "flex", gap: 2 }}>
-                  <DeleteIcon sx={{ fontSize: 14 }} />
-                  <EditIcon sx={{ fontSize: 14 }} />
+                <Typography sx={{ fontSize: 13, fontWeight: 600 }}>
+                  Rs.{item.price}
+                </Typography>
+                <Box sx={{ display: "flex" }}>
+                  {new Array(5).fill("").map((_, index) => {
+                    return (
+                      <Box key={index}>
+                        <StarIcon
+                          sx={{
+                            color: ({ palette: { warning } }) => warning.main,
+                            fontSize: 10,
+                          }}
+                        />
+                      </Box>
+                    );
+                  })}
+                  <Typography sx={{ fontSize: 9, mt: 0.7, ml: 0.5 }}>
+                    ({item.totalRating})
+                  </Typography>
                 </Box>
               </CardContent>
             </Box>
@@ -72,20 +94,27 @@ const Products = () => {
         );
       })}
 
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", mt: 3, mb: 1 }}>
         <Typography
           sx={{
-            fontFamily: "Shalimar",
-            fontWeight: "bold",
-            fontSize: 30,
+            fontWeight: 600,
+            fontSize: 18,
             color: "black",
           }}
         >
           Deal of the Day
         </Typography>
-        <Box sx={{ position: "absolute", right: 0, display: "flex" }}>
-          <Typography>View All</Typography>
-          <ArrowForwardIosSharpIcon sx={{ fontSize: "22.5px" }} />
+        <Box
+          sx={{
+            position: "absolute",
+            right: 0,
+            display: "flex",
+            mb: 2,
+            mr: 4,
+          }}
+        >
+          <Typography sx={{ fontSize: 14 }}>View All</Typography>
+          <ArrowForwardIosSharpIcon sx={{ fontSize: 13, mt: 0.5 }} />
         </Box>
       </Box>
 
@@ -94,22 +123,44 @@ const Products = () => {
           return (
             <Card
               sx={{
-                width: 180,
-                height: 265,
+                width: 185,
+                height: 270,
                 "&:hover": { boxShadow: "8px 10px 8px lightgrey" },
               }}
             >
               <Box>
-                <CardMedia
-                  sx={{ height: 180, width: 180 }}
-                  image={item.image}
-                  title="shoes"
-                />
+                <Box
+                  sx={{
+                    height: 180,
+                    width: 180,
+                    overflow: "hidden",
+                    mx: "auto",
+                  }}
+                >
+                  <CardMedia
+                    sx={{
+                      cursor: "pointer",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
+                    image={item.image}
+                    title="shoes"
+                  />
+                </Box>
                 <CardContent>
-                  <Typography sx={{ fontWeight: "bold", fontSize: 14 }}>
+                  <Typography
+                    sx={{
+                      fontWeight: 600,
+                      fontSize: 13,
+                      lineHeight: "24px",
+                    }}
+                  >
                     {item.desc}
                   </Typography>
-                  <Typography sx={{ fontSize: 13 }}>Rs.{item.price}</Typography>
+                  <Typography sx={{ fontSize: 13, fontWeight: 600 }}>
+                    Rs.{item.price}
+                  </Typography>
                   <Box sx={{ display: "flex" }}>
                     {new Array(5).fill("").map((_, index) => {
                       return (
@@ -117,13 +168,13 @@ const Products = () => {
                           <StarIcon
                             sx={{
                               color: ({ palette: { warning } }) => warning.main,
-                              fontSize: 13,
+                              fontSize: 10,
                             }}
                           />
                         </Box>
                       );
                     })}
-                    <Typography sx={{ fontSize: 10, mt: 0.3 }}>
+                    <Typography sx={{ fontSize: 9, mt: 0.7, ml: 0.5 }}>
                       ({item.totalRating})
                     </Typography>
                   </Box>
@@ -136,17 +187,24 @@ const Products = () => {
       <Box sx={{ display: "flex" }}>
         <Typography
           sx={{
-            fontFamily: "Shalimar",
-            fontWeight: "bold",
-            fontSize: 30,
+            fontWeight: 600,
+            fontSize: 18,
             color: "black",
           }}
         >
           Recommend for You
         </Typography>
-        <Box sx={{ position: "absolute", right: 0, display: "flex" }}>
-          <Typography>View All</Typography>
-          <ArrowForwardIosSharpIcon sx={{ fontSize: "22.5px" }} />
+        <Box
+          sx={{
+            position: "absolute",
+            right: 0,
+            display: "flex",
+            mb: 2,
+            mr: 4,
+          }}
+        >
+          <Typography sx={{ fontSize: 14 }}>View All</Typography>
+          <ArrowForwardIosSharpIcon sx={{ fontSize: 13, mt: 0.5 }} />
         </Box>
       </Box>
 
@@ -155,22 +213,44 @@ const Products = () => {
           return (
             <Card
               sx={{
-                width: 180,
-                height: 265,
+                width: 185,
+                height: 270,
                 "&:hover": { boxShadow: "8px 10px 8px lightgrey" },
+                position: "relative",
               }}
             >
               <Box>
-                <CardMedia
-                  sx={{ height: 180, width: 180 }}
-                  image={item.image}
-                  title="shoes"
-                />
+                <Box
+                  sx={{
+                    height: 180,
+                    width: 180,
+                    overflow: "hidden",
+                    mx: "auto",
+                  }}
+                >
+                  <CardMedia
+                    image={item.image}
+                    sx={{
+                      cursor: "pointer",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
                 <CardContent>
-                  <Typography sx={{ fontWeight: "bold", fontSize: 14 }}>
+                  <Typography
+                    sx={{
+                      fontWeight: 600,
+                      fontSize: 13,
+                      lineHeight: "24px",
+                    }}
+                  >
                     {item.desc}
                   </Typography>
-                  <Typography sx={{ fontSize: 13 }}>Rs.{item.price}</Typography>
+                  <Typography sx={{ fontSize: 13, fontWeight: 600 }}>
+                    Rs.{item.price}
+                  </Typography>
                   <Box sx={{ display: "flex" }}>
                     {new Array(5).fill("").map((_, index) => {
                       return (
@@ -178,13 +258,13 @@ const Products = () => {
                           <StarIcon
                             sx={{
                               color: ({ palette: { warning } }) => warning.main,
-                              fontSize: 13,
+                              fontSize: 10,
                             }}
                           />
                         </Box>
                       );
                     })}
-                    <Typography sx={{ fontSize: 10, mt: 0.4 }}>
+                    <Typography sx={{ fontSize: 9, mt: 0.7, ml: 0.5 }}>
                       ({item.totalRating})
                     </Typography>
                   </Box>
@@ -198,22 +278,44 @@ const Products = () => {
         return (
           <Card
             sx={{
-              width: 180,
-              height: 265,
+              width: 185,
+              height: 270,
               "&:hover": { boxShadow: "8px 10px 8px lightgrey" },
             }}
           >
             <Box>
-              <CardMedia
-                sx={{ height: 180, width: 180 }}
-                image={item.image}
-                title="shoes"
-              />
+              <Box
+                sx={{
+                  height: 180,
+                  width: 180,
+                  overflow: "hidden",
+                  mx: "auto",
+                }}
+              >
+                <CardMedia
+                  sx={{
+                    cursor: "pointer",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                  image={item.image}
+                  title="shoes"
+                />
+              </Box>
               <CardContent>
-                <Typography sx={{ fontWeight: "bold", fontSize: 14 }}>
+                <Typography
+                  sx={{
+                    fontWeight: 600,
+                    fontSize: 13,
+                    lineHeight: "24px",
+                  }}
+                >
                   {item.desc}
                 </Typography>
-                <Typography sx={{ fontSize: 13 }}>Rs.{item.price}</Typography>
+                <Typography sx={{ fontSize: 13, fontWeight: 600 }}>
+                  Rs.{item.price}
+                </Typography>
                 <Box sx={{ display: "flex" }}>
                   {new Array(5).fill("").map((_, index) => {
                     return (
@@ -221,13 +323,13 @@ const Products = () => {
                         <StarIcon
                           sx={{
                             color: ({ palette: { warning } }) => warning.main,
-                            fontSize: 13,
+                            fontSize: 10,
                           }}
                         />
                       </Box>
                     );
                   })}
-                  <Typography sx={{ fontSize: 10, mt: 0.3 }}>
+                  <Typography sx={{ fontSize: 9, mt: 0.7, ml: 0.5 }}>
                     ({item.totalRating})
                   </Typography>
                 </Box>
