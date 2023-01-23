@@ -18,8 +18,8 @@ const ProductCard = ({ item }: Itemss) => {
   return (
     <Card
       sx={{
-        width: { md: 185, xl: 231 },
-        height: { md: 270, xl: 280 },
+        width: { md: 185, xl: 210 },
+        height: { md: 280, xl: 280 },
         "&:hover": { boxShadow: "8px 10px 8px lightgrey" },
         position: "relative",
       }}
@@ -50,6 +50,7 @@ const ProductCard = ({ item }: Itemss) => {
           </Tooltip>
         </div>
         <CardContent>
+          <Typography sx={{ fontSize: 10 }}>BRAND/TYPE</Typography>
           <Typography
             sx={{
               fontWeight: 600,
@@ -61,6 +62,17 @@ const ProductCard = ({ item }: Itemss) => {
           </Typography>
           <Typography sx={{ fontSize: 13, fontWeight: 600 }}>
             Rs.{item.price}
+            <Typography
+              component="span"
+              sx={{
+                fontStyle: "italic",
+                fontSize: 13,
+                ml: 1,
+                textDecoration: "line-through",
+              }}
+            >
+              $6000
+            </Typography>
           </Typography>
           <Box sx={{ display: "flex" }}>
             {new Array(5).fill("").map((_, index) => {

@@ -1,4 +1,5 @@
 import { styled, TextField } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 export const TextFields = (label: string) => {
   return (
@@ -23,4 +24,9 @@ export const TextFields = (label: string) => {
 export const RegisterContainer = styled(TextField)({
   fontSize: "12px",
   "& fieldset": { border: "none" },
+});
+
+export const CustomTypography = styled(Typography)({
+  fontSize: 16,
+  fontWeight: 400,
 });

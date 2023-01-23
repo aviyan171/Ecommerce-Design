@@ -9,6 +9,7 @@ import ProductList from "./pages/ProductList";
 import CategoryBar from "./common/CategoryBar";
 import ProductDetails from "./pages/ProductDetails";
 import Footer from "./pages/Footer";
+import Category from "./pages/Category";
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
         {/* <ForgotPassword /> */}
         {/* <ResetPassword /> */}
         {/* <ProductList /> */}
-        <ProductDetails />
-        <Footer />
+        {/* <ProductDetails /> */}
+        <Category />
+        {/* <Footer /> */}
       </Box>
     </Layout>
   );
