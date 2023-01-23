@@ -17,7 +17,7 @@ const Products = () => {
     <Box
       sx={{
         display: "flex",
-        gap: 1.8,
+        gap: { md: 1.8, xl: 8 },
         flexWrap: "wrap",
       }}
     >
@@ -25,8 +25,8 @@ const Products = () => {
         return (
           <Card
             sx={{
-              width: 185,
-              height: 270,
+              width: { md: 185, xl: 231 },
+              height: { md: 270, xl: 280 },
               "&:hover": { boxShadow: "8px 10px 8px lightgrey" },
               position: "relative",
             }}
@@ -118,13 +118,13 @@ const Products = () => {
         </Box>
       </Box>
 
-      <Box sx={{ display: "flex", gap: 1.8 }}>
+      <Box sx={{ display: "flex", gap: { md: 1.8, xl: 8 } }}>
         {MobileLists.map((item) => {
           return (
             <Card
               sx={{
-                width: 185,
-                height: 270,
+                width: { md: 185, xl: 231 },
+                height: { md: 270, xl: 296 },
                 "&:hover": { boxShadow: "8px 10px 8px lightgrey" },
               }}
             >
@@ -208,13 +208,13 @@ const Products = () => {
         </Box>
       </Box>
 
-      <Box sx={{ display: "flex", gap: 1.8, mb: 2 }}>
+      <Box sx={{ display: "flex", gap: { md: 1.8, xl: 8 }, mb: 2 }}>
         {prodLists.map((item) => {
           return (
             <Card
               sx={{
-                width: 185,
-                height: 270,
+                width: { md: 185, xl: 231 },
+                height: { md: 270, xl: 296 },
                 "&:hover": { boxShadow: "8px 10px 8px lightgrey" },
                 position: "relative",
               }}
@@ -278,8 +278,8 @@ const Products = () => {
         return (
           <Card
             sx={{
-              width: 185,
-              height: 270,
+              width: { md: 185, xl: 231 },
+              height: { md: 270, xl: 296 },
               "&:hover": { boxShadow: "8px 10px 8px lightgrey" },
             }}
           >

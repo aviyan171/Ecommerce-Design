@@ -23,7 +23,14 @@ const CategoryBar = () => {
           mt: 10,
         }}
       >
-        <Box sx={{ display: "flex", gap: 4, ml: 8, mr: 8 }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: { md: 4, xl: 11 },
+            ml: { md: 8, xl: 10 },
+            mr: { md: 8, xl: 10 },
+          }}
+        >
           {categoryLists.map((item, index) => {
             return (
               <Box key={index}>

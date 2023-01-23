@@ -7,6 +7,8 @@ import RegisterPage from "./pages/RegisterPage";
 import ResetPassword from "./pages/ResetPassword";
 import ProductList from "./pages/ProductList";
 import CategoryBar from "./common/CategoryBar";
+import ProductDetails from "./pages/ProductDetails";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
         {/* <LoginPage /> */}
         {/* <ForgotPassword /> */}
         {/* <ResetPassword /> */}
-        <ProductList />
+        {/* <ProductList /> */}
+        <ProductDetails />
+        <Footer />
       </Box>
     </Layout>
   );

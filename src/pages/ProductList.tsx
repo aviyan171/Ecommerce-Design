@@ -9,13 +9,15 @@ import Footer from "./Footer";
 const ProductList = () => {
   return (
     <Box>
-      <Box sx={{ ml: 8, mr: 8, mt: 3, position: "relative" }}>
-        <Box
-          component="img"
-          src={Banner}
-          alt="Banner"
-          sx={{ maxWidth: "100%" }}
-        />
+      <Box
+        sx={{
+          ml: { md: 8, xl: 10 },
+          mr: { md: 8, xl: 10 },
+          mt: 3,
+          position: "relative",
+        }}
+      >
+        <Box component="img" src={Banner} alt="Banner" sx={{ width: "100%" }} />
         <Box sx={{ display: "flex", mt: 2, mb: 2 }}>
           <Typography
             sx={{
@@ -40,6 +42,7 @@ const ProductList = () => {
             <ArrowForwardIosSharpIcon sx={{ fontSize: 13, mt: 0.5 }} />
           </Box>
         </Box>
+
         <Products />
 
         <Box sx={{ display: "flex", mt: 5, mb: 2 }}>

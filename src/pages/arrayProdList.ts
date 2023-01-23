@@ -1,4 +1,6 @@
-export const prodLists=[
+import { Items } from "./interface"
+
+export const prodLists:Items[]=[
     {
         image:'https://www.shutterstock.com/image-photo/vintage-red-shoes-on-white-260nw-92008067.jpg',
         desc:'Product Description',

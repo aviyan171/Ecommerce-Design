@@ -1,328 +1,507 @@
 import {
   Avatar,
   Box,
-  Button,
-  Container,
   Divider,
+  LinearProgress,
+  Paper,
+  Stack,
   Typography,
 } from "@mui/material";
-import StarIcon from "@mui/icons-material/Star";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import DeleteIcon from "@mui/icons-material/Delete";
-import ModeEditIcon from "@mui/icons-material/ModeEdit";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import shoes from "../assets/JPG/shoes.jpg";
+import Container from "@mui/material/Container";
+import Ratings from "../common/Ratings";
+import CustomerReviews from "../common/CustomerReviews";
+import { prodLists } from "./arrayProdList";
+import ProductCard from "../common/ProductCard";
+import { Items } from "./interface";
 
 const ProductDetails = () => {
   return (
-    <Box sx={{ mt: 5 }}>
-      <Container>
-        <Box sx={{ display: "flex", gap: 4 }}>
-          <Box sx={{ flex: 1 }}>
-            <Box sx={{ display: "flex", gap: 2 }}>
+    <Container maxWidth="xl" sx={{ mt: 5, mx: "auto" }}>
+      <Box sx={{ display: "flex", gap: 10 }}>
+        <Box sx={{ flex: 1 }}>
+          <Box sx={{ display: "flex", gap: 2 }}>
+            <Box>
               <Box
                 component="img"
                 src={shoes}
                 alt="img"
-                sx={{ height: "500px", width: "450px" }}
+                sx={{
+                  height: 605,
+                  width: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <KeyboardArrowUpIcon sx={{ color: "#575656", fontSize: 40 }} />
+
+              <Box
+                component="img"
+                src={shoes}
+                alt="img"
+                sx={{
+                  height: 158.98,
+                  width: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
               />
               <Box
+                component="img"
+                src={shoes}
+                alt="img"
                 sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                  justifyContent: "center",
+                  height: 150,
+                  width: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+              <Box
+                component="img"
+                src={shoes}
+                alt="img"
+                sx={{
+                  height: 150,
+                  width: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+              <KeyboardArrowDownIcon sx={{ color: "#575656", fontSize: 40 }} />
+            </Box>
+          </Box>
+        </Box>
+
+        <Box sx={{ flex: 1 }}>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 3.6 }}>
+            <Typography
+              sx={{
+                fontWeight: 600,
+                fontSize: 28,
+              }}
+            >
+              Shoes
+            </Typography>
+
+            <Box sx={{ display: "flex" }}>
+              <Ratings />
+              <Typography sx={{ fontSize: 12, mt: 0.5, ml: 1 }}>
+                (40 reviews)
+              </Typography>
+            </Box>
+            <Typography
+              sx={{
+                fontSize: 28,
+                color: "#3f51b5",
+                fontWeight: 600,
+              }}
+            >
+              $250.00
+            </Typography>
+            <Typography fontWeight={500}>Colors</Typography>
+
+            <Box sx={{ display: "flex", gap: 2.3 }}>
+              <Avatar
+                sx={{
+                  bgcolor: ({
+                    palette: {
+                      error: { light },
+                    },
+                  }) => light,
+                  height: 48,
+                  width: 48,
                 }}
               >
-                <Box
-                  component="img"
-                  src={shoes}
-                  alt="img"
-                  sx={{ height: 150, width: 150 }}
-                />
-                <Box
-                  component="img"
-                  src={shoes}
-                  alt="img"
-                  sx={{ height: 150, width: 150 }}
-                />
-                <Box
-                  component="img"
-                  src={shoes}
-                  alt="img"
-                  sx={{ height: 150, width: 150 }}
-                />
+                {""}
+              </Avatar>
+              <Avatar
+                sx={{
+                  bgcolor: ({
+                    palette: {
+                      success: { light },
+                    },
+                  }) => light,
+                  height: 48,
+                  width: 48,
+                }}
+              >
+                {" "}
+              </Avatar>
+              <Avatar
+                sx={{
+                  bgcolor: ({
+                    palette: {
+                      warning: { light },
+                    },
+                  }) => light,
+                  height: 48,
+                  width: 48,
+                }}
+              >
+                {" "}
+              </Avatar>
+              <Avatar
+                sx={{
+                  bgcolor: ({
+                    palette: {
+                      primary: { light },
+                    },
+                  }) => light,
+                  height: 48,
+                  width: 48,
+                }}
+              >
+                {""}
+              </Avatar>
+            </Box>
+            <Typography
+              sx={{
+                fontWeight: 500,
+              }}
+            >
+              Size
+            </Typography>
+            <Box sx={{ display: "flex", gap: 2 }}>
+              <Box
+                sx={{
+                  height: 30,
+                  width: 35,
+                  border: "0.5px solid grey ",
+                }}
+              >
+                <Typography sx={{ pl: 1 }}>35</Typography>
+              </Box>
+              <Box
+                sx={{
+                  height: 30,
+                  width: 35,
+                  border: "0.5px solid grey ",
+                  bgcolor: "#3f51b5",
+                  color: "white",
+                }}
+              >
+                <Typography sx={{ pl: 1 }}>36</Typography>
+              </Box>
+              <Box
+                sx={{
+                  height: 30,
+                  width: 35,
+                  border: "0.5px solid grey ",
+                }}
+              >
+                <Typography sx={{ pl: 1 }}>37</Typography>
+              </Box>
+              <Box
+                sx={{
+                  height: 30,
+                  width: 35,
+                  border: "0.5px solid grey ",
+                }}
+              >
+                <Typography sx={{ pl: 1 }}>38</Typography>
               </Box>
             </Box>
             <Typography
               sx={{
-                fontFamily: "Sofia Sans Semi Condensed",
-                fontWeight: "bold",
-                mt: 2,
+                fontWeight: 500,
               }}
             >
-              Product Description
+              Quantity
             </Typography>
-            <Typography sx={{ fontFamily: "Sofia Sans Semi Condensed" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              quisquam debitis accusantium dolore aliquid dignissimos
-              voluptatibus, in esse quibusdam est et dolor, qui temporibus
-              aperiam. Placeat culpa tempora totam repellendus.
-            </Typography>
-          </Box>
-
-          <Box sx={{ flex: 1 }}>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-              <Typography
-                sx={{
-                  fontFamily: "Sofia Sans Semi Condensed",
-                  fontWeight: "bold",
-                  fontSize: 25,
-                }}
-              >
-                Canvas shoes for girls
-              </Typography>
-
-              <Box sx={{ display: "flex" }}>
-                {new Array(5).fill("").map((_, index) => {
-                  return (
-                    <Box key={index}>
-                      <StarIcon
-                        sx={{
-                          color: ({
-                            palette: {
-                              warning: { dark },
-                            },
-                          }) => dark,
-                        }}
-                      />
-                    </Box>
-                  );
-                })}
-                <Typography sx={{ fontSize: 15, ml: 1 }}>
-                  (40 reviews)
-                </Typography>
+            <Box
+              sx={{
+                height: 35,
+                width: 95,
+                border: "0.5px solid grey",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Typography sx={{ pl: 1 }}>1</Typography>
+              <Box sx={{ display: "flex", flexDirection: "column", pr: 1 }}>
+                <ExpandLessIcon sx={{ fontSize: 20 }} />
+                <ExpandMoreIcon sx={{ fontSize: 20 }} />
               </Box>
-              <Button variant="contained" sx={{ width: 250 }}>
-                Give Review
-              </Button>
-              <Typography
-                sx={{
-                  fontFamily: "Sofia Sans Semi Condensed",
-                  fontSize: 25,
-                  color: "#3f51b5",
-                  fontWeight: "bold",
-                }}
-                
-              >
-                $250.00
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "Sofia Sans Semi Condensed",
-                  fontWeight: "bold",
-                }}
-              >
-                Colors
-              </Typography>
-
-              <Box sx={{ display: "flex", gap: 2.3 }}>
-                <Avatar
-                  sx={{
-                    bgcolor: ({
-                      palette: {
-                        error: { light },
-                      },
-                    }) => light,
-                  }}
-                >
-                  {" "}
-                </Avatar>
-                <Avatar
-                  sx={{
-                    bgcolor: ({
-                      palette: {
-                        success: { light },
-                      },
-                    }) => light,
-                  }}
-                >
-                  {" "}
-                </Avatar>
-                <Avatar
-                  sx={{
-                    bgcolor: ({
-                      palette: {
-                        warning: { light },
-                      },
-                    }) => light,
-                  }}
-                >
-                  {" "}
-                </Avatar>
-                <Avatar
-                  sx={{
-                    bgcolor: ({
-                      palette: {
-                        primary: { light },
-                      },
-                    }) => light,
-                  }}
-                >
-                  {""}
-                </Avatar>
-              </Box>
-              <Typography
-                sx={{
-                  fontFamily: "Sofia Sans Semi Condensed",
-                  fontWeight: "bold",
-                }}
-              >
-                Size
-              </Typography>
-              <Box sx={{ display: "flex", gap: 2 }}>
-                <Box
-                  sx={{
-                    height: 30,
-                    width: 35,
-                    border: "0.5px solid grey ",
-                  }}
-                >
-                  <Typography sx={{ pl: 1 }}>35</Typography>
-                </Box>
-                <Box
-                  sx={{
-                    height: 30,
-                    width: 35,
-                    border: "0.5px solid grey ",
-                    bgcolor: "#3f51b5",
-                    color: "white",
-                  }}
-                >
-                  <Typography sx={{ pl: 1 }}>36</Typography>
-                </Box>
-                <Box
-                  sx={{
-                    height: 30,
-                    width: 35,
-                    border: "0.5px solid grey ",
-                  }}
-                >
-                  <Typography sx={{ pl: 1 }}>37</Typography>
-                </Box>
-                <Box
-                  sx={{
-                    height: 30,
-                    width: 35,
-                    border: "0.5px solid grey ",
-                  }}
-                >
-                  <Typography sx={{ pl: 1 }}>38</Typography>
-                </Box>
-              </Box>
-              <Typography
-                sx={{
-                  fontWeight: "bold",
-                  fontFamily: "Sofia Sans Semi Condensed",
-                }}
-              >
-                Quantity
-              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
               <Box
                 sx={{
-                  height: 35,
-                  width: 95,
-                  border: "0.5px solid grey",
+                  border: "1px solid",
+                  height: 40,
+                  width: 250,
                   display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
+                  color: "white",
+                  bgcolor: "#D67621",
                 }}
               >
-                <Typography sx={{ pl: 1 }}>1</Typography>
-                <Box sx={{ display: "flex", flexDirection: "column", pr: 1 }}>
-                  <ExpandLessIcon sx={{ fontSize: 20 }} />
-                  <ExpandMoreIcon sx={{ fontSize: 20 }} />
-                </Box>
-              </Box>
-              <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
-                <Box
+                <Typography
                   sx={{
-                    border: "1px solid",
-                    height: 40,
-                    width: 230,
-                    display: "flex",
-                    color: "white",
-                    bgcolor: "#3f51b5",
+                    ml: "30%",
+                    mt: 0.7,
                   }}
                 >
-                  <Typography
-                    sx={{
-                      fontFamily: "Sofia Sans Semi Condensed",
-                      ml: "30%",
-                      mt: 0.7,
-                    }}
-                  >
-                    Add to Cart
-                  </Typography>
-                </Box>
-                <Box sx={{ border: "0.5px solid grey", height: 40, width: 50 }}>
-                  <FavoriteBorderIcon sx={{ ml: 1.5, mt: 1 }} />
-                </Box>
+                  Buy Now
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  border: "1px solid",
+                  height: 40,
+                  width: 250,
+                  display: "flex",
+                  color: "white",
+                  bgcolor: "#3f51b5",
+                }}
+              >
+                <Typography
+                  sx={{
+                    ml: "30%",
+                    mt: 0.7,
+                  }}
+                >
+                  Add to Cart
+                </Typography>
               </Box>
             </Box>
           </Box>
         </Box>
-        <Divider />
+      </Box>
 
-        <Box sx={{ height: 500, width: "maxWidth", mt: 2 }}>
+      <Paper
+        elevation={0}
+        sx={{ height: 178, mt: 3, display: "flex", gap: 50 }}
+      >
+        <Box sx={{ padding: "16px 32px" }}>
           <Typography
-            sx={{ fontFamily: "Shalimar", fontWeight: "bold", fontSize: 30 }}
+            sx={{
+              fontWeight: 600,
+              fontSize: 20,
+            }}
           >
-            Product Reviews
+            Product Description
           </Typography>
-          <Typography
-            sx={{ fontWeight: "bold", fontFamily: "Sofia Sans Semi Condensed" }}
-          >
-            Reviewed By: Abhiyan Upreti
-          </Typography>
-          {
-            <Box sx={{ display: "flex" }}>
-              {new Array(5).fill("").map((_, index) => {
-                return (
-                  <Box key={index}>
-                    <StarIcon
-                      sx={{
-                        color: ({
-                          palette: {
-                            warning: { dark },
-                          },
-                        }) => dark,
-                      }}
-                    />
-                  </Box>
-                );
-              })}
+          <Box sx={{ display: "flex", flexDirection: "row", gap: 20, mt: 4 }}>
+            <Box>
+              <Typography>
+                <Typography component="span">
+                  <CheckCircleOutlineIcon
+                    sx={{ height: 13, width: 13, mr: 1 }}
+                  />
+                </Typography>
+                Standard Fit
+              </Typography>
+              <Typography>
+                <Typography component="span">
+                  <CheckCircleOutlineIcon
+                    sx={{ height: 13, width: 13, mr: 1 }}
+                  />
+                </Typography>
+                Lace-up closure
+              </Typography>
+              <Typography>
+                <Typography component="span">
+                  <CheckCircleOutlineIcon
+                    sx={{ height: 13, width: 13, mr: 1 }}
+                  />
+                </Typography>
+                Rubber outside
+              </Typography>
             </Box>
-          }
-          <Typography>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos
-            perferendis quasi eveniet recusandae, architecto earum animi
-            cupiditate rem maiores voluptas! Iste sapiente quisquam ullam sunt
-            tempora delectus ut nostrum. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Incidunt sed vitae at id illum sit, nostrum ea
-            voluptas, est perspiciatis rerum minima in. Nulla debitis ducimus
-            illo aspernatur et iure?
+
+            <Box>
+              <Typography>
+                <Typography component="span">
+                  <CheckCircleOutlineIcon
+                    sx={{ height: 13, width: 13, mr: 1 }}
+                  />
+                </Typography>
+                Standard Fit
+              </Typography>
+              <Typography>
+                <Typography component="span">
+                  <CheckCircleOutlineIcon
+                    sx={{ height: 13, width: 13, mr: 1 }}
+                  />
+                </Typography>
+                Lace-up closure
+              </Typography>
+              <Typography>
+                <Typography component="span">
+                  <CheckCircleOutlineIcon
+                    sx={{ height: 13, width: 13, mr: 1 }}
+                  />
+                </Typography>
+                Rubber outside
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+
+        <Box sx={{ padding: "16px 32px" }}>
+          <Typography
+            sx={{
+              fontWeight: 600,
+              fontSize: 20,
+            }}
+          >
+            Product Specification
           </Typography>
-          <Box sx={{ display: "flex", gap: 2, cursor: "pointer", mt: 1 }}>
-            <DeleteIcon color="error" />
-            <ModeEditIcon color="primary" />
+          <Box sx={{ display: "flex", gap: 5, mt: 4 }}>
+            <Box>
+              <Typography>Brand</Typography>
+              <Typography>Nike</Typography>
+            </Box>
+            <Box>
+              <Typography>SKU</Typography>
+              <Typography>116778449_NP-1031962218a</Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Paper>
+
+      <Paper sx={{ height: 800, mt: 4 }}>
+        <Box sx={{ pl: "32px", pt: "16px" }}>
+          <Box>
+            <Typography sx={{ fontWeight: 600, fontSize: 20 }}>
+              Ratings & Reviews
+            </Typography>
+
+            <Box sx={{ display: "flex", flexDirection: "row", mb: 5, gap: 20 }}>
+              <Stack gap={1} sx={{ mt: 5 }}>
+                <Typography sx={{ fontSize: 30, fontWeight: 600 }}>
+                  5/5
+                </Typography>
+                <Ratings />
+
+                <Typography sx={{ fontSize: 16, fontWeight: 600 }}>
+                  4 Ratings
+                </Typography>
+              </Stack>
+
+              <Stack sx={{ width: "100%", mt: 2, gap: 1.5 }}>
+                <Box sx={{ display: "flex", gap: 2 }}>
+                  <Ratings />
+                  <LinearProgress
+                    value={85}
+                    variant="determinate"
+                    color="warning"
+                    sx={{
+                      height: 20,
+                      width: 260,
+                    }}
+                  />
+
+                  <Typography>5</Typography>
+                </Box>
+                <Box sx={{ display: "flex", gap: 2 }}>
+                  <Ratings />
+
+                  <LinearProgress
+                    value={75}
+                    variant="determinate"
+                    color="warning"
+                    sx={{
+                      height: 20,
+                      width: 260,
+                    }}
+                  />
+
+                  <Typography>4</Typography>
+                </Box>
+                <Box sx={{ display: "flex", gap: 2 }}>
+                  <Ratings />
+
+                  <LinearProgress
+                    value={65}
+                    variant="determinate"
+                    color="warning"
+                    sx={{
+                      height: 20,
+                      width: 260,
+                    }}
+                  />
+
+                  <Typography>3</Typography>
+                </Box>
+                <Box sx={{ display: "flex", gap: 2 }}>
+                  <Ratings />
+
+                  <LinearProgress
+                    value={50}
+                    variant="determinate"
+                    color="warning"
+                    sx={{
+                      height: 20,
+                      width: 260,
+                    }}
+                  />
+
+                  <Typography>2</Typography>
+                </Box>
+                <Box sx={{ display: "flex", gap: 2 }}>
+                  <Ratings />
+
+                  <LinearProgress
+                    value={0}
+                    variant="determinate"
+                    color="warning"
+                    sx={{
+                      height: 20,
+                      width: 260,
+                    }}
+                  />
+
+                  <Typography>0</Typography>
+                </Box>
+              </Stack>
+            </Box>
           </Box>
           <Divider />
+
+          <Box>
+            <Typography sx={{ fontWeight: 700, fontSize: 20, pt: 5 }}>
+              Product Reviews
+            </Typography>
+
+            <Box>
+              <Box sx={{ width: "698px" }}>
+                <CustomerReviews />
+                <Divider />
+                <CustomerReviews />
+              </Box>
+            </Box>
+          </Box>
         </Box>
-      </Container>
-    </Box>
+      </Paper>
+      <Box sx={{ pt: 3 }}>
+        <Typography sx={{ fontWeight: 600, fontSize: 24 }}>
+          Related Products
+        </Typography>
+        <Box sx={{ display: "flex", gap: { md: 5, xl: 8 }, mt: 3, mb: 10 }}>
+          {prodLists.map((item: Items) => {
+            return <ProductCard item={item} />;
+          })}
+        </Box>
+      </Box>
+    </Container>
   );
 };
 
