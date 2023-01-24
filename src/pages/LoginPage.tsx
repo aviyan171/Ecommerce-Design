@@ -76,15 +76,6 @@ export const LoginPage = () => {
             }}
           >
             <TextField
-              sx={{ width: "100%", "& fieldset": { border: "none" } }}
-              InputProps={{
-                style: {
-                  height: "40px",
-                  borderRadius: "4px",
-                  backgroundColor: "#F7F8FA",
-                  width: "100%",
-                },
-              }}
               label="Email"
               InputLabelProps={{
                 shrink: true,
@@ -92,21 +83,11 @@ export const LoginPage = () => {
             />
             <Box sx={{ position: "relative" }}>
               <TextField
-                sx={{
-                  width: "100%",
-                  "& fieldset": { border: "none" },
-                }}
-                InputProps={{
-                  style: {
-                    height: "40px",
-                    borderRadius: "4px",
-                    backgroundColor: "#F7F8FA",
-                  },
-                }}
                 label="Password"
                 InputLabelProps={{
                   shrink: true,
                 }}
+                fullWidth
               />
               <Typography
                 color="primary"

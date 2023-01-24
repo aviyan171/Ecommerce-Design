@@ -56,7 +56,11 @@ const Navbar = () => {
             <Stack
               sx={{
                 flexDirection: "row",
-                color: ({ palette: { primary } }) => primary.main,
+                color: ({
+                  palette: {
+                    primary: { main },
+                  },
+                }) => main,
                 gap: 0.5,
               }}
             >

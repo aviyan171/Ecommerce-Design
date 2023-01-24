@@ -16,7 +16,11 @@ const Navbarrr = () => {
     <Box>
       <AppBar
         sx={{
-          bgcolor: "#F8F9FA",
+          bgcolor: ({
+            palette: {
+              common: { white },
+            },
+          }) => white,
           height: 85,
           display: "flex",
           justifyContent: "center",
@@ -41,35 +45,37 @@ const Navbarrr = () => {
             NoveltyMart
           </Typography>
           <TextField
+            sx={{
+              background: (theme) => theme.palette.greyScale.light,
+              borderRadius: "4px",
+              width: 500,
+              border: ({
+                palette: {
+                  greyScale: { lighter },
+                },
+              }) => `1px solid ${lighter}`,
+            }}
             placeholder="Search essentials, groceries and more..."
             InputProps={{
-              style: {
-                height: "48px",
-                width: "500px",
-                borderRadius: "8px",
-                fontSize: "12px",
-              },
               startAdornment: (
                 <InputAdornment position="start">
-                  <SearchIcon
-                    sx={{ width: "16px", height: "16px", ml: "19.88px" }}
-                  />
+                  <SearchIcon sx={{ height: "16px" }} />
                 </InputAdornment>
               ),
             }}
           />
           <Box sx={{ display: "flex", gap: "11px", alignItems: "center" }}>
             <IconButton>
-              <PersonIcon color="secondary" />
+              <PersonIcon color="primary" />
             </IconButton>
-            <Typography color="secondary" mr={2} sx={{ fontSize: "16px" }}>
+            <Typography color="primary" mr={2} sx={{ fontSize: "16px" }}>
               Sign Up/Sign In
             </Typography>
             <Divider orientation="vertical" sx={{ height: 30 }} />
             <IconButton>
-              <ShoppingCartIcon color="secondary" />
+              <ShoppingCartIcon color="primary" />
             </IconButton>
-            <Typography color="secondary" sx={{ fontSize: "16px" }}>
+            <Typography color="primary" sx={{ fontSize: "16px" }}>
               Cart
             </Typography>
           </Box>

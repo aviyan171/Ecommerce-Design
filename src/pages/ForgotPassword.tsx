@@ -33,16 +33,6 @@ const ForgotPassword = () => {
             }}
           >
             <TextField
-              sx={{ width: "100%", "& fieldset": { border: "none" } }}
-              type="password"
-              InputProps={{
-                style: {
-                  height: "40px",
-                  borderRadius: "4px",
-                  backgroundColor: "#F7F8FA",
-                  width: "100%",
-                },
-              }}
               label="Email"
               InputLabelProps={{
                 shrink: true,

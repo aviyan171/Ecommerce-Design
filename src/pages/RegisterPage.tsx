@@ -5,6 +5,9 @@ import {
   Paper,
   TextField,
   Typography,
+  FormControl,
+  InputLabel,
+  useTheme,
 } from "@mui/material";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -13,6 +16,8 @@ import Checkbox from "@mui/material/Checkbox";
 import Google from "../assets/SVG/google-icon.svg";
 
 const RegisterPage = () => {
+  const theme = useTheme();
+
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }}>
       <Paper
@@ -68,31 +73,12 @@ const RegisterPage = () => {
           </Divider>
           <Box sx={{ mt: 5, gap: 4, display: "flex", flexDirection: "column" }}>
             <Box sx={{ display: "flex", flexDirection: "row", gap: 2.5 }}>
+              <FormControl>
+                <InputLabel shrink>First Name</InputLabel>
+
+                <TextField />
+              </FormControl>
               <TextField
-                sx={{ fontSize: "12px", "& fieldset": { border: "none" } }}
-                InputProps={{
-                  style: {
-                    height: "40px",
-                    width: "252px",
-                    backgroundColor: "#F7F8FA",
-                  },
-                }}
-                label="First Name"
-                InputLabelProps={{
-                  shrink: true,
-                  margin: "dense",
-                }}
-              />
-              <TextField
-                sx={{ fontSize: "12px", "& fieldset": { border: "none" } }}
-                InputProps={{
-                  style: {
-                    height: "40px",
-                    width: "252px",
-                    borderRadius: "4px",
-                    backgroundColor: "#F7F8FA",
-                  },
-                }}
                 label="last Name"
                 InputLabelProps={{
                   shrink: true,
@@ -100,42 +86,18 @@ const RegisterPage = () => {
               />
             </Box>
             <TextField
-              sx={{ width: "100%", "& fieldset": { border: "none" } }}
-              InputProps={{
-                style: {
-                  height: "40px",
-                  borderRadius: "4px",
-                  backgroundColor: "#F7F8FA",
-                },
-              }}
               label="Email"
               InputLabelProps={{
                 shrink: true,
               }}
             />
             <TextField
-              sx={{ width: "100%", "& fieldset": { border: "none" } }}
-              InputProps={{
-                style: {
-                  height: "40px",
-                  borderRadius: "4px",
-                  backgroundColor: "#F7F8FA",
-                },
-              }}
               label="Contact Number"
               InputLabelProps={{
                 shrink: true,
               }}
             />
             <TextField
-              sx={{ width: "100%", "& fieldset": { border: "none" } }}
-              InputProps={{
-                style: {
-                  height: "40px",
-                  borderRadius: "4px",
-                  backgroundColor: "#F7F8FA",
-                },
-              }}
               label="Password"
               InputLabelProps={{
                 shrink: true,
@@ -144,14 +106,6 @@ const RegisterPage = () => {
             />
 
             <TextField
-              sx={{ width: "100%", "& fieldset": { border: "none" } }}
-              InputProps={{
-                style: {
-                  height: "40px",
-                  borderRadius: "4px",
-                  backgroundColor: "#F7F8FA",
-                },
-              }}
               label="Confirm Password"
               InputLabelProps={{
                 shrink: true,

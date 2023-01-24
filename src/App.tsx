@@ -10,21 +10,23 @@ import CategoryBar from "./common/CategoryBar";
 import ProductDetails from "./pages/ProductDetails";
 import Footer from "./pages/Footer";
 import Category from "./pages/Category";
+import CheckOut from "./pages/CheckOut";
 
 function App() {
   return (
     <Layout>
       <Box>
         <Navbarrr />
-        <CategoryBar />
+        {/* <CategoryBar /> */}
         {/* <RegisterPage /> */}
         {/* <LoginPage /> */}
         {/* <ForgotPassword /> */}
         {/* <ResetPassword /> */}
         {/* <ProductList /> */}
         {/* <ProductDetails /> */}
-        <Category />
+        {/* <Category /> */}
         {/* <Footer /> */}
+        <CheckOut />
       </Box>
     </Layout>
   );
