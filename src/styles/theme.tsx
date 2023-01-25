@@ -19,12 +19,9 @@ declare module "@mui/material/styles" {
   }
 }
 
-declare module "@mui/material/TextField" {
-  interface TextFieldPropsVariantOverrides {
-    dashed: true;
-  }
-  interface TextFieldPropsVariantOverridesOptions {
-    dashed: true;
+declare module "@mui/material/Button" {
+  interface ButtonPropsVariantOverrides {
+    save: true;
   }
 }
 
@@ -76,11 +73,36 @@ export const theme = createTheme({
           textTransform: "none",
         },
       },
+      variants: [
+        {
+          props: { variant: "save" },
+          style: {
+            height: "40px",
+            width: "72px",
+            color: "#FFFFFF",
+            textTransform: "none",
+            padding: "8px 16px",
+            backgroundColor: "#2A3969",
+            opacity: 0.7,
+          },
+        },
+      ],
     },
     MuiPaper: {
       styleOverrides: {
         elevation: {
           backgroundColor: "#FFFFFF",
+        },
+      },
+    },
+    MuiNativeSelect: {
+      styleOverrides: {
+        standard: {
+          height: 44,
+          backgroundColor: "#F7F8FA",
+          border: "none",
+          fontFamily: "poppins",
+          fontSize: "12px",
         },
       },
     },

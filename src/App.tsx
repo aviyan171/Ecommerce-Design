@@ -11,6 +11,8 @@ import ProductDetails from "./pages/ProductDetails";
 import Footer from "./pages/Footer";
 import Category from "./pages/Category";
 import CheckOut from "./pages/CheckOut";
+import MyAccount from "./pages/MyAccount";
+import WishList from "./pages/WishList";
 
 function App() {
   return (
@@ -26,7 +28,9 @@ function App() {
         {/* <ProductDetails /> */}
         {/* <Category /> */}
         {/* <Footer /> */}
-        <CheckOut />
+        {/* <CheckOut /> */}
+        {/* <MyAccount /> */}
+        <WishList />
       </Box>
     </Layout>
   );
