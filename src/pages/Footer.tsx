@@ -13,7 +13,7 @@ const Footer = () => {
           color: "#f4f4f4",
         }}
       >
-        <Container sx={{ display: "flex", gap: 15 }}>
+        <Container sx={{ display: "flex", gap: 15, mt: 5 }} maxWidth="xl">
           <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
             <Typography sx={{ mt: 3.5 }}>Customer Care</Typography>
             <Typography>Contact</Typography>

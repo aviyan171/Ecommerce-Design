@@ -7,11 +7,18 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { useState } from "react";
 import ChangePassword from "../common/ChangePassword";
 import Gender from "../common/Gender";
 import MYWishList from "../common/MyWishList";
 
 const MyAccount = () => {
+  const [password, setchangePassword] = useState(false);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setchangePassword(event.target.checked);
+  };
+
   return (
     <Container maxWidth="xl" sx={{ mt: 10, mx: "auto", pt: 5 }}>
       <Box sx={{ display: "flex" }}>
@@ -82,7 +89,11 @@ const MyAccount = () => {
                       <Gender />
                     </Grid>
                     <Grid xl={12} md={12} xs={12}>
-                      <ChangePassword />
+                      <ChangePassword
+                        password={password}
+                        setchangePassword={setchangePassword}
+                        handleChange={handleChange}
+                      />
                     </Grid>
                     <Grid xl={12} md={12} xs={12}>
                       <Button
@@ -95,43 +106,45 @@ const MyAccount = () => {
                   </Grid>
                 </Box>
               </Box>
-              <Box sx={{ ml: 5 }}>
-                <Typography variant="h6" fontWeight="bold">
-                  Change Password
-                </Typography>
-                <Grid container rowGap={3} mt="53px">
-                  <Grid xl={12} md={12} sm={12} xs={12}>
-                    <TextField
-                      fullWidth
-                      label="Current Password"
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                    />
-                  </Grid>
+              {password && (
+                <Box sx={{ ml: 5 }}>
+                  <Typography variant="h6" fontWeight="bold">
+                    Change Password
+                  </Typography>
+                  <Grid container rowGap={3} mt="53px">
+                    <Grid xl={12} md={12} sm={12} xs={12}>
+                      <TextField
+                        fullWidth
+                        label="Current Password"
+                        InputLabelProps={{
+                          shrink: true,
+                        }}
+                      />
+                    </Grid>
 
-                  <Grid xl={12} md={12} xs={12}>
-                    <TextField
-                      fullWidth
-                      label="New Password"
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                      helperText="Passwords must be at least 8 characters."
-                    />
-                  </Grid>
+                    <Grid xl={12} md={12} xs={12}>
+                      <TextField
+                        fullWidth
+                        label="New Password"
+                        InputLabelProps={{
+                          shrink: true,
+                        }}
+                        helperText="Passwords must be at least 8 characters."
+                      />
+                    </Grid>
 
-                  <Grid xl={12} md={12} xs={12}>
-                    <TextField
-                      fullWidth
-                      label="Confirm Password"
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                    />
+                    <Grid xl={12} md={12} xs={12}>
+                      <TextField
+                        fullWidth
+                        label="Confirm Password"
+                        InputLabelProps={{
+                          shrink: true,
+                        }}
+                      />
+                    </Grid>
                   </Grid>
-                </Grid>
-              </Box>
+                </Box>
+              )}
             </Box>
           </Paper>
         </Box>

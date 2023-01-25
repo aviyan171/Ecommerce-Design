@@ -98,7 +98,9 @@ const Category = () => {
                 Fashion
               </Typography>
             </Typography>
-            <SortBy />
+            <Box>
+              <SortBy />
+            </Box>
           </Box>
           <Box
             sx={{

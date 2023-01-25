@@ -13,7 +13,9 @@ export const MYWishList = () => {
         >
           My Account
         </Typography>
-        <Typography variant="body1">My Wishlist</Typography>
+        <Typography variant="body1" pl={0.5}>
+          My Wishlist
+        </Typography>
       </Stack>
     </Paper>
   );

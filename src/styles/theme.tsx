@@ -106,6 +106,14 @@ export const theme = createTheme({
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        outlined: {
+          border: "1px solid #B3B3B3",
+          backgroundColor: "#FFFFFF",
+        },
+      },
+    },
     // MuiTextField: {
     //   styleOverrides: {
     //     root: {

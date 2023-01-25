@@ -13,6 +13,8 @@ import Category from "./pages/Category";
 import CheckOut from "./pages/CheckOut";
 import MyAccount from "./pages/MyAccount";
 import WishList from "./pages/WishList";
+import Cart from "./pages/Cart";
+import AddToCartConfirm from "./pages/AddToCartConfirm";
 
 function App() {
   return (
@@ -27,10 +29,12 @@ function App() {
         {/* <ProductList /> */}
         {/* <ProductDetails /> */}
         {/* <Category /> */}
-        {/* <Footer /> */}
         {/* <CheckOut /> */}
-        {/* <MyAccount /> */}
-        <WishList />
+        <MyAccount />
+        {/* <WishList /> */}
+        {/* <Cart /> */}
+        {/* <AddToCartConfirm /> */}
+        {/* <Footer /> */}
       </Box>
     </Layout>
   );

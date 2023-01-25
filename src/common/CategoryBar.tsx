@@ -26,7 +26,7 @@ const CategoryBar = () => {
         <Box
           sx={{
             display: "flex",
-            gap: { md: 4, xl: 11 },
+            gap: { md: 3, xl: 11 },
             ml: { md: 8, xl: 10 },
             mr: { md: 8, xl: 10 },
           }}
@@ -38,7 +38,7 @@ const CategoryBar = () => {
                   color="primary"
                   sx={{
                     fontSize: 13,
-                    fontWeight: 400,
+                    fontWeight: 500,
                   }}
                 >
                   {item}

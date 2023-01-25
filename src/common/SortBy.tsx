@@ -12,19 +12,20 @@ export default function SortBy() {
   };
 
   return (
-    <FormControl sx={{ width: 245, height: 44 }} size="small">
-      <InputLabel id="demo-select-small">Sort by:</InputLabel>
+    <FormControl sx={{ width: 245, height: 44 }} size="medium">
+      <InputLabel sx={{ fontSize: 16 }}>Sort by:</InputLabel>
       <Select
-        labelId="demo-select-small"
-        id="demo-select-small"
         value={sortBy}
-        label="Sort by:"
         onChange={handleChange}
+        inputProps={{
+          style: {
+            fontSize: "12px",
+          },
+        }}
       >
-        <MenuItem value="Expensive">Expensive</MenuItem>
+        <MenuItem value="Expensive">Price High to low</MenuItem>
         <MenuItem value="Expensive">Most Relevent</MenuItem>
-        <MenuItem value="Cheap">Cheap</MenuItem>
-        <MenuItem value="Medium">Medium</MenuItem>
+        <MenuItem value="Medium">Price Low to High</MenuItem>
       </Select>
     </FormControl>
   );
