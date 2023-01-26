@@ -114,6 +114,19 @@ export const theme = createTheme({
         },
       },
     },
+    MuiTable: {
+      styleOverrides: {
+        root: {
+          "& .MuiTableCell-head": {
+            fontSize: "16px",
+            fontWeight: 600,
+          },
+          "& .MuiTableCell-body": {
+            fontSize: "13px",
+          },
+        },
+      },
+    },
     // MuiTextField: {
     //   styleOverrides: {
     //     root: {

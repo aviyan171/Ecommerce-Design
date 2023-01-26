@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
+import { BrowserRouter } from "react-router-dom";
+import Sidebar from "./pages/AdminPages/Drawer";
 
 import "./index.css";
 import App from "./App";
@@ -12,7 +14,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <BrowserRouter>
+        <Sidebar />
+        <App />
+      </BrowserRouter>
     </ThemeProvider>
     <CssBaseline />
   </React.StrictMode>

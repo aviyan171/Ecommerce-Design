@@ -13,7 +13,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import shoe from "../assets/JPG/shoes.jpg";
 import { prodLists } from "./arrayProdList";
-import ProductCard from "../common/ProductCard";
+import ProductCard from "../../common/ProductCard";
 
 const Cart = () => {
   return (

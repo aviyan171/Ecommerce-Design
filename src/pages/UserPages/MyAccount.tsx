@@ -8,9 +8,9 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import ChangePassword from "../common/ChangePassword";
-import Gender from "../common/Gender";
-import MYWishList from "../common/MyWishList";
+import ChangePassword from "../../common/ChangePassword";
+import Gender from "../../common/Gender";
+import MYWishList from "../../common/MyWishList";
 
 const MyAccount = () => {
   const [password, setchangePassword] = useState(false);
@@ -106,6 +106,7 @@ const MyAccount = () => {
                   </Grid>
                 </Box>
               </Box>
+
               {password && (
                 <Box sx={{ ml: 5 }}>
                   <Typography variant="h6" fontWeight="bold">

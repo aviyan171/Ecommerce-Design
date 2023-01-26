@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 
-import State from "../common/State";
+import State from "../../common/State";
 import shoes from "../assets/JPG/shoe.jpg";
 import Divider from "@mui/material/Divider";
 

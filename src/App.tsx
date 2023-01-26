@@ -1,26 +1,17 @@
 import { Box } from "@mui/material";
-import Navbarrr from "./common/Navbarrr";
+import { Route, Routes } from "react-router-dom";
+
 import Layout from "./Layout/Layout";
-import ForgotPassword from "./pages/ForgotPassword";
-import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
-import ResetPassword from "./pages/ResetPassword";
-import ProductList from "./pages/ProductList";
-import CategoryBar from "./common/CategoryBar";
-import ProductDetails from "./pages/ProductDetails";
-import Footer from "./pages/Footer";
-import Category from "./pages/Category";
-import CheckOut from "./pages/CheckOut";
-import MyAccount from "./pages/MyAccount";
-import WishList from "./pages/WishList";
-import Cart from "./pages/Cart";
-import AddToCartConfirm from "./pages/AddToCartConfirm";
+import Categories from "./pages/AdminPages/Categories";
+import Dashboard from "./pages/AdminPages/Dashboard";
+import Order from "./pages/AdminPages/Order";
+import Product from "./pages/AdminPages/Product";
 
 function App() {
   return (
     <Layout>
       <Box>
-        <Navbarrr />
+        {/* <Navbarrr /> */}
         {/* <CategoryBar /> */}
         {/* <RegisterPage /> */}
         {/* <LoginPage /> */}
@@ -30,11 +21,18 @@ function App() {
         {/* <ProductDetails /> */}
         {/* <Category /> */}
         {/* <CheckOut /> */}
-        <MyAccount />
+        {/* <MyAccount /> */}
         {/* <WishList /> */}
         {/* <Cart /> */}
         {/* <AddToCartConfirm /> */}
         {/* <Footer /> */}
+        {/* <Drawers /> */}
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/category" element={<Categories />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/order" element={<Order />} />
+        </Routes>
       </Box>
     </Layout>
   );

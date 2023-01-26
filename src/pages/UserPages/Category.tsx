@@ -1,12 +1,12 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider/Divider";
-import Colors from "../common/Colors";
-import CheckboxLabels from "../common/Labels";
+import Colors from "../../common/Colors";
+import CheckboxLabels from "../../common/Labels";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-import { CustomTypography } from "../styles/CustomStyles";
-import SortBy from "../common/SortBy";
-import ProductCard from "../common/ProductCard";
+import { CustomTypography } from "../../styles/CustomStyles";
+import SortBy from "../../common/SortBy";
+import ProductCard from "../../common/ProductCard";
 import { prodLists } from "./arrayProdList";
 
 const Category = () => {

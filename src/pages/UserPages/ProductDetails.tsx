@@ -15,10 +15,10 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import shoes from "../assets/JPG/shoes.jpg";
 import Container from "@mui/material/Container";
-import Ratings from "../common/Ratings";
-import CustomerReviews from "../common/CustomerReviews";
+import Ratings from "../../common/Ratings";
+import CustomerReviews from "../../common/CustomerReviews";
 import { prodLists } from "./arrayProdList";
-import ProductCard from "../common/ProductCard";
+import ProductCard from "../../common/ProductCard";
 import { Items } from "./interface";
 
 const ProductDetails = () => {

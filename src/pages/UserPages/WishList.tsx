@@ -7,7 +7,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import MYWishList from "../common/MyWishList";
+import MYWishList from "../../common/MyWishList";
 import shoe from "../assets/JPG/shoes.jpg";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
