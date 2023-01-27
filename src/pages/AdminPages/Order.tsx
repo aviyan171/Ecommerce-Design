@@ -14,6 +14,7 @@ import {
   Toolbar,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useNavigate } from "react-router-dom";
 
 import OrderStatus from "../../common/OrderStatus";
 import ShowOrderLists from "../../common/ShowTen";
@@ -22,12 +23,14 @@ import Today from "../../common/Today";
 import { drawerWidth } from "../../utils/commonVariable";
 
 const Order = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Box
         sx={{
           p: "32px 32px 94px 32px ",
           width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { xl: `${drawerWidth}px`, sm: 0, md: `${drawerWidth}px` },
         }}
       >
         <Toolbar />
@@ -89,7 +92,14 @@ const Order = () => {
                     <TableCell>#12345</TableCell>
                     <TableCell>01/10/2023</TableCell>
                     <TableCell>01/10/2023</TableCell>
-                    <TableCell>surna@noveltytechnology.com</TableCell>
+                    <TableCell
+                      sx={{ cursor: "pointer" }}
+                      onClick={() => {
+                        navigate("/order-details");
+                      }}
+                    >
+                      surna@noveltytechnology.com
+                    </TableCell>
                     <TableCell>
                       <OrderStatus />
                     </TableCell>

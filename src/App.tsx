@@ -5,6 +5,7 @@ import Layout from "./Layout/Layout";
 import Categories from "./pages/AdminPages/Categories";
 import Dashboard from "./pages/AdminPages/Dashboard";
 import Order from "./pages/AdminPages/Order";
+import OrderDetails from "./pages/AdminPages/OrderDetails";
 import Product from "./pages/AdminPages/Product";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/category" element={<Categories />} />
           <Route path="/product" element={<Product />} />
           <Route path="/order" element={<Order />} />
+          <Route path="/order-details" element={<OrderDetails />} />
         </Routes>
       </Box>
     </Layout>

@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { Items } from "../pages/interface";
+import { Items } from "../pages/UserPages/interface";
 
 export interface Itemss {
   item: Items;
