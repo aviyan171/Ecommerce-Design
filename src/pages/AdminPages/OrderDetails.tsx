@@ -158,7 +158,7 @@ const OrderDetails = () => {
                         </Typography>
                       </Stack>
                     </Box>
-                    <Typography>1</Typography>
+                    <Typography sx={{ ml: { xl: 5 } }}>1</Typography>
                     <Typography sx={{ pl: 5 }}>$300.00</Typography>
                     <Typography sx={{ pl: { md: 1, xl: 0 } }}>
                       $300.00

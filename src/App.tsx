@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 
 import Layout from "./Layout/Layout";
-import Categories from "./pages/AdminPages/Categories";
+import Categories from "./pages/AdminPages/Category/Categories";
 import Dashboard from "./pages/AdminPages/Dashboard";
 import Order from "./pages/AdminPages/Order";
 import OrderDetails from "./pages/AdminPages/OrderDetails";
