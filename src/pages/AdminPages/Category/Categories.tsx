@@ -158,7 +158,7 @@ const Categories = () => {
         onOpen={() => toggleDraweer(true)}
       >
         <Box sx={{ width: "910px", padding: "32px 30px 32px 32px " }}>
-          <CategoryDetail />
+          <CategoryDetail toggleDraweer={toggleDraweer} />
         </Box>
       </SwipeableDrawer>
     </Box>
