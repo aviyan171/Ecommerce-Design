@@ -3,6 +3,7 @@ import {
   Button,
   Divider,
   Drawer,
+  Modal,
   Paper,
   SwipeableDrawer,
   Toolbar,
@@ -16,6 +17,7 @@ import { drawerWidth } from "../../../utils/commonVariable";
 import shoes from "../../../assets/JPG/shoes.jpg";
 import { useState } from "react";
 import CategoryDetail from "./CategoryDetail";
+import AddCategory from "./AddCategory";
 
 const Categories = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -24,11 +26,18 @@ const Categories = () => {
     setOpenDrawer(toggle);
   };
 
+  const [open, setOpen] = useState(false);
+  const handleOpenModal = () => setOpen(true);
+  const handleCloseModal = () => setOpen(false);
   return (
     <Box sx={{ padding: "32px 32px 32px", ml: `${drawerWidth}px` }}>
       <Toolbar />
       <Box textAlign="right">
-        <Button startIcon={<AddIcon />} variant="contained">
+        <Button
+          startIcon={<AddIcon />}
+          variant="contained"
+          onClick={handleOpenModal}
+        >
           Add Catagory
         </Button>
       </Box>
@@ -161,6 +170,38 @@ const Categories = () => {
           <CategoryDetail toggleDraweer={toggleDraweer} />
         </Box>
       </SwipeableDrawer>
+
+      <Box>
+        <Modal
+          open={open}
+          onClose={handleCloseModal}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          disableScrollLock={true}
+          sx={{
+            "& .MuiBox-root": {
+              padding: "0px 0px 0px 0px",
+            },
+          }}
+        >
+          <Box
+            sx={{
+              position: "absolute" as "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: 700,
+              height: 446,
+              bgcolor: "background.paper",
+              padding: "none",
+
+              p: 4,
+            }}
+          >
+            <AddCategory />
+          </Box>
+        </Modal>
+      </Box>
     </Box>
   );
 };

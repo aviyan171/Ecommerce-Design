@@ -7,19 +7,17 @@ import {
   Typography,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { useState, DragEvent } from "react";
+import { DragEvent, useState } from "react";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 
-export const AddSubCategory = () => {
+const AddCategory = () => {
   const [images, setImages] = useState<FileList>();
 
   const dropHandler = (e: DragEvent) => {
     e.preventDefault();
-    const files = e?.dataTransfer?.files;
-    if (files) {
-      if (files[0].type === "image/jpeg" || "image/png" || "image/svg")
-        setImages(files);
-    }
+    const files = e.dataTransfer.files;
+    if (files[0].type === "image/jpeg" || "image/png" || "image/svg")
+      setImages(files);
   };
 
   const dragOverHandler = (e: any) => {
@@ -40,7 +38,7 @@ export const AddSubCategory = () => {
       >
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography variant="h6" fontWeight={600}>
-            Add Sub Catagory
+            Add Catagory
           </Typography>
           <CloseIcon />
         </Box>
@@ -49,16 +47,7 @@ export const AddSubCategory = () => {
         <Box sx={{ display: "flex", flexDirection: "column", gap: 5 }}>
           <TextField
             fullWidth
-            placeholder="eg. Clothing"
             label="Catagory Name*"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-          <TextField
-            fullWidth
-            placeholder="Women's Fashion"
-            label="Parent Catagory*"
             InputLabelProps={{
               shrink: true,
             }}
@@ -69,13 +58,13 @@ export const AddSubCategory = () => {
               Category image*
             </Typography>
             <Box
+              onDrop={dropHandler}
+              onDragOver={dragOverHandler}
               sx={{
                 border: "none",
                 bgcolor: (theme) => theme.palette.greyScale.light,
                 height: "136px",
               }}
-              onDrop={dropHandler}
-              onDragOver={dragOverHandler}
             >
               {images ? (
                 <Stack alignItems="center">
@@ -107,3 +96,5 @@ export const AddSubCategory = () => {
     </Box>
   );
 };
+
+export default AddCategory;
